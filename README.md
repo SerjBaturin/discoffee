@@ -39,7 +39,8 @@ MVP of discount service for coffee makers
 Install the dependencies and devDependencies and start the server
 
 ```sh
-$ cd discoffee
+$ cd discoffee/server
+$ cd discoffee/client
 $ npm install -d
 $ npm start
 ```
