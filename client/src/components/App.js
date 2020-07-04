@@ -1,13 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Header, Footer } from "./layouts";
+import Landing from "./Landing";
+import "./style.scss";
 
-function App(props) {
-  return (
-    <div className="App">
-      <h1>{props.test}</h1>
+const App = (props) => (
+  <div className="app">
+    <Header />
+    <div className="container">
+      <Landing />
     </div>
-  );
-}
+    <Footer />
+  </div>
+);
 
 const mapStateToProps = (state) => {
   return {

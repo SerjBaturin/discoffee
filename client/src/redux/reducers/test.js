@@ -1,10 +1,10 @@
-function test(state = 'test', action) {
+function test(state = "test", action) {
   switch (action.type) {
-    case 'TEST_ASYNC':
-      return action.value
+    case "TEST":
+      return (state = "FROM CLEAN REDUX");
     default:
-      return state
+      return state;
   }
 }
 
-export default test
+export default test;
