@@ -1,6 +1,8 @@
 import React from "react";
+
+import Hamburger from "../../common/Hamburger";
 import "./header.scss";
-import Logo from "./Logo.svg"
+import Logo from "./Logo.svg";
 
 const Header = () => {
   return (
@@ -9,6 +11,7 @@ const Header = () => {
         <img src={Logo} alt="logo" />
       </div>
       <div className="header__name">DisCoffee</div>
+      <Hamburger />
     </div>
   );
 };

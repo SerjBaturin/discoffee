@@ -1,12 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Header, Footer } from "./layouts";
+import Menu from "./Menu";
 import Landing from "./Landing";
 import "./style.scss";
 
 const App = (props) => (
   <div className="app">
     <Header />
+    {props.isMenuOpen ? <Menu /> : null}
     <Landing />
     <Footer />
   </div>
@@ -14,7 +16,7 @@ const App = (props) => (
 
 const mapStateToProps = (state) => {
   return {
-    test: state.test,
+    isMenuOpen: state.toggleMenu,
   };
 };
 

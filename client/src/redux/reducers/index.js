@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import test from "./test"
+import toggleMenu from "./toggleMenu";
 
 export default combineReducers({
-test
+  toggleMenu,
 });
