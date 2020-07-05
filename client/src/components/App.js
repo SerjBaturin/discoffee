@@ -7,9 +7,7 @@ import "./style.scss";
 const App = (props) => (
   <div className="app">
     <Header />
-    <div className="container">
-      <Landing />
-    </div>
+    <Landing />
     <Footer />
   </div>
 );
