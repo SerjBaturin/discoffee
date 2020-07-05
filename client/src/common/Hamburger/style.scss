@@ -1,3 +1,9 @@
+@mixin animate-hamburger($rotate) {
+  margin: -2.5px;
+  transform: rotate($rotate) scale(1);
+  background-color: #fff;
+  transition: all 0.2s;
+}
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -20,5 +26,32 @@
 
   & span:nth-child(3) {
     margin-top: 3px;
+  }
+}
+
+.hamburger_open {
+  & span:nth-child(1) {
+    @include animate-hamburger(45deg);
+  }
+  & span:nth-child(2) {
+    transform: scale(0);
+    transition: all 0.5s;
+  }
+
+  & span:nth-child(3) {
+    @include animate-hamburger(-45deg);
+  }
+}
+
+.hamburger_close {
+  & span:nth-child(1) {
+    transition: all 0.2s;
+  }
+  & span:nth-child(2) {
+    transition: all 0.2s;
+  }
+
+  & span:nth-child(3) {
+    transition: all 0.2s;
   }
 }
