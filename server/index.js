@@ -1,10 +1,8 @@
 const express = require("express")
 const app = express()
-const PORT = 3000
+const PORT = 5555
 
-app.get("/", (req, res) => {
-  res.send("HELLO from SERVER")
-})
+app.use(express.static('../client'))
 
 app.listen(PORT, () => {
   console.log("OK ===> ", PORT, process.pid)

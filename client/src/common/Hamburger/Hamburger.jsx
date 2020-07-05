@@ -14,7 +14,7 @@ const Hamburger = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleMenu: () => dispatch({ type: "MENU_OPEN"}),
+    toggleMenu: () => dispatch({ type: "MENU_TOGGLE" }),
   };
 };
 
