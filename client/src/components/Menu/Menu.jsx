@@ -1,9 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 import "./style.scss";
 
-const Menu = () => {
+const Menu = (props) => {
   return (
-    <div className="menu">
+    <div className={`menu ${props.isMenuOpen ? "menu_open" : "menu_close"}`}>
       <ul className="menu__list">
         <li className="menu__list__item">First item</li>
         <li className="menu__list__item">Second item</li>
@@ -15,4 +16,10 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+const mapStateToProps = (state) => {
+  return {
+    isMenuOpen: state.toggleMenu,
+  };
+};
+
+export default connect(mapStateToProps)(Menu);

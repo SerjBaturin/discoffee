@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./style.scss";
+import menuToggle from '../../redux/actions/menuToggle'
 
 const Hamburger = (props) => {
   return (
@@ -14,7 +15,7 @@ const Hamburger = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleMenu: () => dispatch({ type: "MENU_TOGGLE" }),
+    toggleMenu: () => dispatch(menuToggle()),
   };
 };
 

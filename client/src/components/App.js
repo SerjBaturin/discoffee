@@ -8,7 +8,7 @@ import "./style.scss";
 const App = (props) => (
   <div className="app">
     <Header />
-    {props.isMenuOpen ? <Menu /> : null}
+    <Menu />
     <Landing />
     <Footer />
   </div>
