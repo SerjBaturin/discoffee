@@ -20,7 +20,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  // background-color: #333;
 }
 
 // UTP
@@ -88,15 +87,15 @@
 
 // HOW IT WORKS
 .landing__how {
-  @include section-layout();
+  @include section-layout;
 }
 
 // ABOUT
 .landing__about {
-  @include section-layout();
+  @include section-layout;
 }
 
 // TESTIMONIALS
 .landing__testimonials {
-  @include section-layout();
+  @include section-layout;
 }
