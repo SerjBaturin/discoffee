@@ -1,10 +1,11 @@
-import { takeEvery, put, delay } from "redux-saga/effects";
+import { takeLatest, put, delay } from "redux-saga/effects";
 
+let count = 1;
 function* testAsync() {
-  yield delay(4000);
-  yield put({ type: "TEST_ASYNC", value: "SAGA test" });
+  yield delay(1000);
+  yield put({ type: "TEST_ASYNC", value: count++ });
 }
 
 export function* watchTest() {
-  yield takeEvery("TEST", testAsync);
+  yield takeLatest("TEST", testAsync);
 }
