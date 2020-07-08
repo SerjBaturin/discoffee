@@ -1,19 +1,34 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Hamburger from "../../common/Hamburger";
 import "./header.scss";
 import Logo from "./Logo.svg";
+import Button from "../../common/Button";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="header">
       <div className="header__logo">
         <img src={Logo} alt="logo" />
       </div>
       <div className="header__name">DisCoffee</div>
+      <Button name={props.isLogged} />
       <Hamburger />
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    isLogged: state.isLogged,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handlerLogin: () => dispatch({ type: "IS_LOGGED" }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

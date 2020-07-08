@@ -9,20 +9,18 @@ const Landing = (props) => {
     <div className="landing">
       <section className="landing__utp">
         <div className="container">
-          <h1>Сервис (система?) лояльности для клиентов</h1>
+          <h1>Проверка подключения и работы redux-saga {props.sagaCounter}</h1>
           <ul>
-            <li>управляй бонусами и скидками</li>
-            <li>всего за 100 рублей в месяц</li>
+            <li>delay утсановлен на 1 секунду</li>
+            <li>так же есть метод takeLatest</li>
             <li>дари радость людям</li>
-            <li>не сдохни от счастья</li>
-            <li></li>
+            <li>это подзаголовок</li>
           </ul>
           <Button
             styles={s.landing}
             name="РЕГИСТРАЦИЯ"
             handler={props.handlerClick}
           />
-          <span>{props.sagaCounter}</span>
         </div>
       </section>
 
@@ -33,31 +31,35 @@ const Landing = (props) => {
             <div className="landing__price__cards__card">
               <h3>Бесплатно</h3>
               <ul>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
+                <li>Одна точка</li>
+                <li>Учёт клиентов</li>
+                <li>Чат-бот WhatsApp</li>
+                <li>0 рублей / месяц</li>
               </ul>
               <Button styles={s.default} name="далее" />
             </div>
             <div className="landing__price__cards__card">
               <h3>Стандарт</h3>
               <ul>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
+                <li>Пять точек</li>
+                <li>Учёт клиентов</li>
+                <li>Чат-бот WhatsApp</li>
+                <li>Чат-бот Telegram</li>
+                <li>Рассылка сообщений</li>
+                <li>100 рублей / месяц</li>
               </ul>
               <Button styles={s.default} name="далее" />
             </div>
             <div className="landing__price__cards__card">
               <h3>Бизнес</h3>
               <ul>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
-                <li>Lorem, ipsum.</li>
+                <li>Число точек не ограничено</li>
+                <li>Учёт клиентов</li>
+                <li>Чат-бот WhatsApp</li>
+                <li>Чат-бот Telegram</li>
+                <li>Рассылка сообщений</li>
+                <li>Автоматическая отчётность</li>
+                <li>300 рублей / месяц</li>
               </ul>
               <Button styles={s.default} name="далее" />
             </div>

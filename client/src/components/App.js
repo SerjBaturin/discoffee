@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Header, Footer } from "./layouts";
 import Menu from "./Menu";
 import Landing from "./Landing";
+// import Loader from "../common/Loader";
 import "./style.scss";
 
 const App = (props) => (
