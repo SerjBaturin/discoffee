@@ -1,23 +1,24 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { Header, Footer } from "./layouts";
 import Menu from "./Menu";
+import Admin from "./Admin";
 import Landing from "./Landing";
 // import Loader from "../common/Loader";
 import "./style.scss";
 
-const App = (props) => (
+const App = ({ isLogged }) => (
   <div className="app">
     <Header />
     <Menu />
-    <Landing />
+    {isLogged ? <Admin /> : <Landing />}
     <Footer />
   </div>
 );
 
 const mapStateToProps = (state) => {
   return {
-    isMenuOpen: state.toggleMenu,
+    isLogged: state.isLogged.isLogged,
   };
 };
 

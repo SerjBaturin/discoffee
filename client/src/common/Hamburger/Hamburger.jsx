@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import "./style.scss";
 import menuToggle from "../../redux/actions/menuToggle";
 
-const Hamburger = (props) => {
+const Hamburger = ({ toggleMenu, isMenuOpen }) => {
   return (
     <div
-      onClick={props.toggleMenu}
+      onClick={toggleMenu}
       className={`hamburger ${
-        props.isMenuOpen ? "hamburger_open" : "hamburger_close"
+        isMenuOpen ? "hamburger_open" : "hamburger_close"
       }`}
     >
       <span></span>

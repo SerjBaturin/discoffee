@@ -4,14 +4,14 @@ import "./style.scss";
 import Button from "../../common/Button";
 import { s } from "../../common/Button/buttonStyles";
 
-const Landing = (props) => {
+const Landing = ({ sagaCounter, handlerClick }) => {
   return (
     <div className="landing">
       <section className="landing__utp">
         <div className="container">
-          <h1>Проверка подключения и работы redux-saga {props.sagaCounter}</h1>
+          <h1>Проверка подключения и работы redux-saga {sagaCounter}</h1>
           <ul>
-            <li>delay утсановлен на 1 секунду</li>
+            <li>delay установлен на 1 секунду</li>
             <li>так же есть метод takeLatest</li>
             <li>дари радость людям</li>
             <li>нажми кнопку</li>
@@ -19,7 +19,7 @@ const Landing = (props) => {
           <Button
             styles={s.landing}
             name="РЕГИСТРАЦИЯ"
-            handler={props.handlerClick}
+            handler={handlerClick}
           />
         </div>
       </section>

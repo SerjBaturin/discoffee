@@ -7,18 +7,14 @@ import Logo from "./Logo.svg";
 import Button from "../../common/Button";
 import { s } from "../../common/Button/buttonStyles";
 
-const Header = (props) => {
+const Header = ({ isLogged, handlerLogin }) => {
   return (
     <div className="header">
       <div className="header__logo">
         <img src={Logo} alt="logo" />
       </div>
       <div className="header__name">DisCoffee</div>
-      <Button
-        name={props.isLogged.name}
-        handler={props.handlerLogin}
-        styles={s.primary}
-      />
+      <Button name={isLogged.name} handler={handlerLogin} styles={s.primary} />
       <Hamburger />
     </div>
   );

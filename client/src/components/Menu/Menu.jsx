@@ -2,15 +2,36 @@ import React from "react";
 import { connect } from "react-redux";
 import "./style.scss";
 
-const Menu = (props) => {
+const userItems = [
+  "First item",
+  "Second item",
+  "Third item",
+  "Fourth item",
+  "Fifth item",
+];
+
+const adminItems = [
+  "Admin First item",
+  "Admin Second item",
+  "Admin Third item",
+  "Admin Fourth item",
+  "Admin Fifth item",
+];
+
+const menuItemsHandler = (menuItems) =>
+  menuItems.map((item, i) => (
+    <li className="menu__list__item" key={i}>
+      {item}
+    </li>
+  ));
+
+const Menu = ({ isMenuOpen, isLogged }) => {
   return (
-    <div className={`menu ${props.isMenuOpen ? "menu_open" : "menu_close"}`}>
+    <div className={`menu ${isMenuOpen ? "menu_open" : "menu_close"}`}>
       <ul className="menu__list">
-        <li className="menu__list__item">First item</li>
-        <li className="menu__list__item">Second item</li>
-        <li className="menu__list__item">Third item</li>
-        <li className="menu__list__item">Fourth item</li>
-        <li className="menu__list__item">Fifth item</li>
+        {isLogged === true
+          ? menuItemsHandler(adminItems)
+          : menuItemsHandler(userItems)}
       </ul>
     </div>
   );
@@ -19,6 +40,7 @@ const Menu = (props) => {
 const mapStateToProps = (state) => {
   return {
     isMenuOpen: state.toggleMenu,
+    isLogged: state.isLogged.isLogged,
   };
 };
 
