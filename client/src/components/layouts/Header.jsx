@@ -5,6 +5,7 @@ import Hamburger from "../../common/Hamburger";
 import "./header.scss";
 import Logo from "./Logo.svg";
 import Button from "../../common/Button";
+import { s } from "../../common/Button/buttonStyles";
 
 const Header = (props) => {
   return (
@@ -13,7 +14,11 @@ const Header = (props) => {
         <img src={Logo} alt="logo" />
       </div>
       <div className="header__name">DisCoffee</div>
-      <Button name={props.isLogged} />
+      <Button
+        name={props.isLogged.name}
+        handler={props.handlerLogin}
+        styles={s.primary}
+      />
       <Hamburger />
     </div>
   );
@@ -27,7 +32,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handlerLogin: () => dispatch({ type: "IS_LOGGED" }),
+    handlerLogin: () =>
+      dispatch({
+        type: "IS_LOGGED",
+      }),
   };
 };
 

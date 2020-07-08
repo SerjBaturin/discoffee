@@ -14,4 +14,11 @@ export const s = {
     backgroundColor: "#1976d2",
     borderRadius: "5px",
   },
+  primary: {
+    marginLeft: "2em",
+    padding: ".7em",
+    color: "#fff",
+    backgroundColor: "#2DCB6F",
+    borderRadius: "5px",
+  },
 };

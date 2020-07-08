@@ -14,7 +14,7 @@ const Landing = (props) => {
             <li>delay утсановлен на 1 секунду</li>
             <li>так же есть метод takeLatest</li>
             <li>дари радость людям</li>
-            <li>это подзаголовок</li>
+            <li>нажми кнопку</li>
           </ul>
           <Button
             styles={s.landing}

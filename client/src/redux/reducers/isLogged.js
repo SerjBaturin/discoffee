@@ -1,9 +1,14 @@
-const initialState
+const initialState = { isLogged: false, name: "Log in" };
 
-const isLogged = (staqte = false, action) => {
+const isLogged = (state = initialState, action) => {
   switch (action.type) {
     case "IS_LOGGED":
-      return (state = true);
+      if (state.isLogged === false) {
+        return { isLogged: true, name: "Log out" };
+      } else {
+        return { isLogged: false, name: "Log in" };
+      }
+
     default:
       return state;
   }
