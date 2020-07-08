@@ -1,0 +1,22 @@
+.users__title {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.users__list__item {
+  display: flex;
+  padding-top: 0.4em;
+  width: 100%;
+}
+
+.users__controls {
+  margin-left: auto;
+  span {
+    margin-left: 1em;
+    cursor: pointer;
+  }
+}
+
+.users__list__item:nth-child(odd) {
+  background-color: #f0f0f0;
+}

@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Users from "./Users";
 import "./style.scss";
 
 const Admin = () => {
+  const [users, setUsers] = useState();
+
+  useEffect(() => {
+    axios("http://jsonplaceholder.typicode.com/users")
+      .then((users) =>
+        setTimeout(() => {
+          setUsers(users.data);
+        }, 1000),
+      )
+      .catch((err) => err);
+  }, []);
+
   return (
     <div className="admin">
       <div className="admin__container">
         <h2 className="admin__title">Hello, Admin!</h2>
-        <section className="admin__users">
-          <h3>Пользаватели</h3>
-        </section>
-        <section className="admin__charts">
-          <h3>Статистика</h3>
-        </section>
-        <section className="admin__docs">
-          <h3>Документация</h3>
-        </section>
+        <Users users={users} />
       </div>
     </div>
   );

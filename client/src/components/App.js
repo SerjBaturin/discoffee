@@ -4,7 +4,6 @@ import { Header, Footer } from "./layouts";
 import Menu from "./Menu";
 import Admin from "./Admin";
 import Landing from "./Landing";
-// import Loader from "../common/Loader";
 import "./style.scss";
 
 const App = ({ isLogged }) => (

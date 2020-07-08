@@ -1,11 +1,3 @@
-// MIXINS
-@mixin admin-section {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 10vh;
-  margin: 1em;
-}
 .admin {
   display: flex;
   flex-direction: column;
@@ -19,11 +11,7 @@
 }
 
 .admin__container {
-  width: 90%;
-}
-
-.admin__users,
-.admin__charts,
-.admin__docs {
-  @include admin-section;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 98%;
 }
