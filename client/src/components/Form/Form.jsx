@@ -20,19 +20,19 @@ const Form = () => {
         <input
           type="text"
           placeholder="Почта"
-          defaultValue={email}
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="text"
           placeholder="Пароль"
-          defaultValue={password}
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <input
           type="text"
           placeholder="Пароль ещё раз"
-          defaultValue={passwordConfirm}
+          value={passwordConfirm}
           onChange={(e) => setPasswordConfirm(e.target.value)}
         />
         <input type="submit" value="Отправить" />
