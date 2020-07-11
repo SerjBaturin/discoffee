@@ -3,24 +3,30 @@ import { connect } from "react-redux";
 import "./style.scss";
 import Button from "../../common/Button";
 import { s } from "../../common/Button/buttonStyles";
+import Form from "../Form";
 
 const Landing = ({ sagaCounter, handlerClick }) => {
   return (
     <div className="landing">
       <section className="landing__utp">
         <div className="container">
-          <h1>Проверка подключения и работы redux-saga {sagaCounter}</h1>
-          <ul>
-            <li>delay установлен на 1 секунду</li>
-            <li>так же есть метод takeLatest</li>
-            <li>дари радость людям</li>
-            <li>нажми кнопку</li>
-          </ul>
-          <Button
-            styles={s.landing}
-            name="РЕГИСТРАЦИЯ"
-            handler={handlerClick}
-          />
+          <div className="landing__utp__wrapper">
+            <div className="landing__utp__wrapper__utp">
+              <h1>
+                Бонусная система DisCoffee
+                <br /> - всегда лояльные клиенты
+              </h1>
+              <ul>
+                <li>подходит для сетей и отдельных кафе</li>
+                <li>чат-бот в WhatsApp и Telegram</li>
+                <li>есть бесплатный вариант</li>
+                <li>нет привязки к карте</li>
+              </ul>
+            </div>
+            <div className="landing__utp__wrapper__form">
+              <Form />
+            </div>
+          </div>
         </div>
       </section>
 
