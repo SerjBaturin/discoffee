@@ -6,7 +6,7 @@ const CheckDB = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5555/api/users", {
+      .get("/api/users", {
         withCredentials: true,
       })
       .then((d) => setUsers(d.data))

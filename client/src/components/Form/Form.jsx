@@ -10,7 +10,7 @@ const Form = () => {
   const handlerOnSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5555/api/users/add", { email, password })
+      .post("/api/users/add", { email, password })
       .then((d) => d)
       .catch((err) => err);
     setEmail("");
