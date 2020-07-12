@@ -11,10 +11,11 @@
 
 .users__controls {
   margin-left: auto;
-  span {
-    margin-left: 1em;
-    cursor: pointer;
-  }
+}
+
+.users__controls__item {
+  margin-left: 1em;
+  cursor: pointer;
 }
 
 .users__list__item:nth-child(odd) {

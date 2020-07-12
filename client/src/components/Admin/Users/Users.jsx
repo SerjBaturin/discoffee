@@ -6,10 +6,10 @@ import "./style.scss";
 
 const controls = () => (
   <div className="users__controls">
-    <span>Договор</span>
-    <span>Стат</span>
-    <span>Ред</span>
-    <span>Удалить</span>
+    <span className="users__controls__item">Договор</span>
+    <span className="users__controls__item">Стат</span>
+    <span className="users__controls__item">Ред</span>
+    <span className="users__controls__item">Удалить</span>
   </div>
 );
 

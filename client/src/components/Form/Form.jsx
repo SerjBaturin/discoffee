@@ -15,7 +15,7 @@ const Form = () => {
   };
 
   return (
-    <div className="form_registration">
+    <div className="registration-form__wrapper">
       <form onSubmit={handlerOnSubmit}>
         <input
           type="text"
