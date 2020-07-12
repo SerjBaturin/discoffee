@@ -11,7 +11,7 @@ const Header = ({ isLogged, handlerLogin }) => {
   return (
     <div className="header">
       <div className="header__logo">
-        <img src={Logo} alt="logo" />
+        <img className="header__logo__img" src={Logo} alt="logo" />
       </div>
       <div className="header__name">DisCoffee</div>
       <Button name={isLogged.name} handler={handlerLogin} styles={s.primary} />

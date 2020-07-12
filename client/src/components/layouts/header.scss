@@ -14,10 +14,10 @@
 
 .header__logo {
   margin-right: 1rem;
+}
 
-  & img {
-    width: 25px;
-  }
+.header__logo__img {
+  width: 25px;
 }
 
 .header__name {
