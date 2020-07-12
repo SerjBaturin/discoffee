@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Users from "./Users";
+import CheckDB from "./CheckDB";
 import "./style.scss";
 
 const Admin = () => {
@@ -21,6 +22,7 @@ const Admin = () => {
       <div className="admin__container">
         <h2 className="admin__title">Hello, Admin!</h2>
         <Users users={users} />
+        <CheckDB />
       </div>
     </div>
   );

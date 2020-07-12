@@ -1,17 +1,21 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./style.scss";
 
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordConfirm, setPasswordConfirm] = useState("");
+  // const [passwordConfirm, setPasswordConfirm] = useState("");
 
   const handlerOnSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password, passwordConfirm);
+    axios
+      .post("http://localhost:5555/api/users/add", { email, password })
+      .then((d) => d)
+      .catch((err) => err);
     setEmail("");
     setPassword("");
-    setPasswordConfirm("");
+    // setPasswordConfirm("");
   };
 
   return (
@@ -22,19 +26,21 @@ const Form = () => {
           placeholder="Почта"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <input
           type="text"
           placeholder="Пароль"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
-        <input
+        {/* <input
           type="text"
           placeholder="Пароль ещё раз"
           value={passwordConfirm}
           onChange={(e) => setPasswordConfirm(e.target.value)}
-        />
+        /> */}
         <input type="submit" value="Отправить" />
       </form>
     </div>
