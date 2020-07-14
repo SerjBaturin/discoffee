@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import API from "../../API";
 import "./style.scss";
 
 const Form = () => {
@@ -9,8 +9,7 @@ const Form = () => {
 
   const handlerOnSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:5555/api/users/add", { email, password })
+    API.addUser.post("/users/add", { email, password })
       .then((d) => d)
       .catch((err) => err);
     setEmail("");

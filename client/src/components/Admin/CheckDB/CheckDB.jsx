@@ -1,16 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 
-const CheckDB = () => {
-  const [users, setUsers] = useState([]);
-
+const CheckDB = ({ users, getUsers }) => {
   useEffect(() => {
-    axios
-      .get("http://localhost:5555/api/users", {
-        withCredentials: true,
-      })
-      .then((d) => setUsers(d.data))
-      .catch((err) => err);
+    getUsers();
   }, []);
 
   return (
@@ -25,4 +18,16 @@ const CheckDB = () => {
   );
 };
 
-export default CheckDB;
+const mapStateToProps = (state) => {
+  return {
+    users: state.getUsers,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getUsers: () => dispatch({ type: "GET_USERS_ASYNC" }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckDB);
