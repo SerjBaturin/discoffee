@@ -1,20 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import Users from "./Users";
-import CheckDB from "./CheckDB";
 import "./style.scss";
 
-const Admin = () => {
-  const [users, setUsers] = useState();
-
+const Admin = ({ users, getUsers }) => {
   useEffect(() => {
-    axios("http://jsonplaceholder.typicode.com/users")
-      .then((users) =>
-        setTimeout(() => {
-          setUsers(users.data);
-        }, 1000),
-      )
-      .catch((err) => err);
+    getUsers();
   }, []);
 
   return (
@@ -22,10 +13,21 @@ const Admin = () => {
       <div className="admin__container">
         <h2 className="admin__title">Hello, Admin!</h2>
         <Users users={users} />
-        <CheckDB />
       </div>
     </div>
   );
 };
 
-export default Admin;
+const mapStateToProps = (state) => {
+  return {
+    users: state.getUsers,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getUsers: () => dispatch({ type: "GET_USERS_ASYNC" }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Admin);

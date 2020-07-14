@@ -38,8 +38,8 @@ app.get("/api/users", (req, res) => {
 });
 
 app.post("/api/users/add", (req, res) => {
- const user = new User(req.body);
- user.save();
+  const user = new User(req.body);
+  user.save();
 });
 
 app.listen(PORT, () => {

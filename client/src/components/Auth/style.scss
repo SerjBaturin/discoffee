@@ -1,0 +1,14 @@
+.auth__tabs {
+  display: inline-block;
+  padding: 0.5em 0.5em;
+  color: #fff;
+  background-color: #1976d2;
+  cursor: pointer;
+  &:nth-child(1) {
+    border-top-left-radius: 10px;
+  }
+  &:nth-child(2) {
+    background-color: #20b35d;
+    border-top-right-radius: 10px;
+  }
+}

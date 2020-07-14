@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./style.scss";
 import Button from "../../common/Button";
 import { s } from "../../common/Button/buttonStyles";
-import Form from "../Form";
+import Auth from "../Auth";
 
 const Landing = ({ sagaCounter, handlerClick }) => {
   return (
@@ -24,12 +24,11 @@ const Landing = ({ sagaCounter, handlerClick }) => {
               </ul>
             </div>
             <div className="landing__utp__wrapper__form">
-              <Form />
+              <Auth />
             </div>
           </div>
         </div>
       </section>
-
       <section className="landing__price">
         <div className="container">
           <h2 className="landing__section__title">Сколько это стоит</h2>
@@ -42,7 +41,11 @@ const Landing = ({ sagaCounter, handlerClick }) => {
                 <li>Чат-бот WhatsApp</li>
                 <li>0 рублей / месяц</li>
               </ul>
-              <Button className="landing__price__cards__card__button" styles={s.default} name="далее" />
+              <Button
+                className="landing__price__cards__card__button"
+                styles={s.default}
+                name="далее"
+              />
             </div>
             <div className="landing__price__cards__card">
               <h3 className="landing__price__cards__card__title">Стандарт</h3>
@@ -54,7 +57,11 @@ const Landing = ({ sagaCounter, handlerClick }) => {
                 <li>Рассылка сообщений</li>
                 <li>100 рублей / месяц</li>
               </ul>
-              <Button className="landing__price__cards__card__button" styles={s.default} name="далее" />
+              <Button
+                className="landing__price__cards__card__button"
+                styles={s.default}
+                name="далее"
+              />
             </div>
             <div className="landing__price__cards__card">
               <h3 className="landing__price__cards__card__title">Бизнес</h3>

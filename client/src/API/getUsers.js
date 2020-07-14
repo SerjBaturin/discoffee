@@ -1,3 +1,3 @@
-import { instanceGET } from "./instances";
+import { instance } from "./instances";
 
-export const getUsers = () => instanceGET;
+export const getUsers = () => instance;

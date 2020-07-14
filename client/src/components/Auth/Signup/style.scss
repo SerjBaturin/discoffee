@@ -1,8 +1,9 @@
-.registration-form__wrapper {
+.signup {
   box-sizing: border-box;
   padding: 2em;
-  background-color: #1976d2;
-  border-radius: 10px;
+  background-color: #20b35d;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   form {
     input {
       display: block;
@@ -12,7 +13,7 @@
       border-radius: 5px;
       &:focus {
         outline: none;
-        box-shadow: 2px 2px 0px #002a53;
+        box-shadow: 2px 2px 0px #116936;
       }
 
       &:last-child {
@@ -20,12 +21,12 @@
         margin-bottom: 0;
         padding: 0.5em 1em;
         background-color: #fff;
-        color: #1976d2;
+        color: #20b35d;
         font-size: 1rem;
         font-weight: 600;
         cursor: pointer;
         &:hover {
-          color: #002a53;
+          color: #116936;
         }
         &:focus {
           box-shadow: none;

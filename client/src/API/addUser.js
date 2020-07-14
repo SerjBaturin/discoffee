@@ -1,3 +1,3 @@
-import { instancePOST } from "./instances";
+import { instance } from "./instances";
 
-export const addUser = () => instancePOST;
+export const addUser = () => instance;

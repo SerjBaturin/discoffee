@@ -1,0 +1,37 @@
+.signin {
+  box-sizing: border-box;
+  padding: 2em;
+  background-color: #1976d2;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  form {
+    input {
+      display: block;
+      margin-bottom: 2em;
+      padding: 1em 1.5em;
+      border: none;
+      border-radius: 5px;
+      &:focus {
+        outline: none;
+        box-shadow: 2px 2px 0px #002a53;
+      }
+
+      &:last-child {
+        margin-left: auto;
+        margin-bottom: 0;
+        padding: 0.5em 1em;
+        background-color: #fff;
+        color: #1976d2;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          color: #002a53;
+        }
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

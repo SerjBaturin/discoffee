@@ -1,7 +1,6 @@
 import React from "react";
 
 import Loader from "../../../common/Loader";
-import Statistics from "../Statistics";
 import "./style.scss";
 
 const controls = () => (
@@ -13,23 +12,22 @@ const controls = () => (
   </div>
 );
 
-const Users = ({ users }) => {
+const Users = ({ users, isLoading }) => {
   return (
     <div className="users">
       <h3 className="users__title">Пользаватели</h3>
       <ul className="users__list">
-        {!users ? (
+        {isLoading === false ? (
           <Loader />
         ) : (
-          users.map((user, i) => (
-            <li className="users__list__item" key={user.id}>
-              {`${user.name}`}
+          users.map((user) => (
+            <li className="users__list__item" key={user._id}>
+              {`${user.email}`}
               {controls()}
             </li>
           ))
         )}
       </ul>
-      <Statistics users={users} />
     </div>
   );
 };

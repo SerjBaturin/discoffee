@@ -1,25 +1,28 @@
 import React, { useState } from "react";
-import API from "../../API";
 import "./style.scss";
 
-const Form = () => {
+const Signin = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [passwordConfirm, setPasswordConfirm] = useState("");
 
   const handlerOnSubmit = (e) => {
     e.preventDefault();
-    API.addUser.post("/users/add", { email, password })
-      .then((d) => d)
-      .catch((err) => err);
+    setName("");
     setEmail("");
     setPassword("");
-    // setPasswordConfirm("");
   };
 
   return (
-    <div className="registration-form__wrapper">
+    <div className="signin">
       <form onSubmit={handlerOnSubmit}>
+        <input
+          type="text"
+          placeholder="Имя"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
         <input
           type="text"
           placeholder="Почта"
@@ -34,16 +37,17 @@ const Form = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        {/* <input
+        <input
           type="text"
-          placeholder="Пароль ещё раз"
-          value={passwordConfirm}
-          onChange={(e) => setPasswordConfirm(e.target.value)}
-        /> */}
+          placeholder="Подтвердите пароль"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
         <input type="submit" value="Отправить" />
       </form>
     </div>
   );
 };
 
-export default Form;
+export default Signin;

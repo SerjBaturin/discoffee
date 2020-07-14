@@ -44,3 +44,8 @@ $ cd discoffee/client
 $ npm install -d
 $ npm start
 ```
+
+## How To
+
+#### Client
+- 
