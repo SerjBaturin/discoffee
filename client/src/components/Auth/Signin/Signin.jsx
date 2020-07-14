@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import API from "../../../API";
 import "./style.scss";
 
 const Signin = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handlerOnSubmit = (e) => {
     e.preventDefault();
-    setName("");
+    API.signup
+      .post("/users/signin", { email, password })
+      .then((d) => d)
+      .catch((err) => err);
     setEmail("");
     setPassword("");
   };
@@ -16,13 +19,6 @@ const Signin = () => {
   return (
     <div className="signin">
       <form onSubmit={handlerOnSubmit}>
-        <input
-          type="text"
-          placeholder="Имя"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
         <input
           type="text"
           placeholder="Почта"
@@ -33,13 +29,6 @@ const Signin = () => {
         <input
           type="text"
           placeholder="Пароль"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Подтвердите пароль"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required

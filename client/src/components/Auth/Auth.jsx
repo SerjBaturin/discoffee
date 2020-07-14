@@ -14,7 +14,7 @@ const Auth = () => {
       <span className="auth__tabs" onClick={() => setSign(true)}>
         Вход
       </span>
-      {signin === false ? <Signin /> : <Signup />}
+      {signin === false ? <Signup /> : <Signin />}
     </div>
   );
 };
