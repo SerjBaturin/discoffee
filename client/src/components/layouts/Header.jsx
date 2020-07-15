@@ -2,10 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Hamburger from "../../common/Hamburger";
-import "./header.scss";
-import Logo from "./Logo.svg";
 import Button from "../../common/Button";
+import ToggleLanguage from "../ToggleLanguage";
 import { s } from "../../common/Button/buttonStyles";
+import Logo from "./Logo.svg";
+import "./header.scss";
 
 /**
  * Header layout component.
@@ -22,6 +23,7 @@ const Header = ({ isLogged, handlerLogin }) => {
       </div>
       <div className="header__name">DisCoffee</div>
       <Button name={isLogged.name} handler={handlerLogin} styles={s.primary} />
+      <ToggleLanguage />
       <Hamburger />
     </div>
   );

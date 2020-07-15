@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./style.scss";
 
+import { userSigninAction } from "../../../redux/actions/userSigninAction";
+
 /**
  * Signin component (like a tab).
  * Connected with userSignin saga.
@@ -46,7 +48,7 @@ const Signin = ({ userSignin }) => {
 // 123user1
 const mapDispatchToProps = (dispatch) => {
   return {
-    userSignin: (user) => dispatch({ type: "USER_SIGNIN_ASYNC", user }),
+    userSignin: (user) => dispatch(userSigninAction(user)),
   };
 };
 

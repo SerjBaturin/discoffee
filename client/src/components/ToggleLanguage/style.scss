@@ -1,0 +1,15 @@
+.toggle-language {
+  margin-left: 2em;
+}
+
+.toggle-language__location {
+  cursor: pointer;
+  &:last-child {
+    color: #ffffff80;
+  }
+}
+
+.toggle-language__divider {
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+}
