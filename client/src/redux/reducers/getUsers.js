@@ -1,3 +1,10 @@
+/**
+ * Get all users reducer.
+ *
+ * @param {object} state initialState empty array
+ * @param {object} action from redux saga /sagas/getUsers.js
+ * @returns {object} action.users
+ */
 const getUsers = (state = [], action) => {
   switch (action.type) {
     case "GET_USERS":

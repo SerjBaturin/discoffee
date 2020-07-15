@@ -1,3 +1,11 @@
+/**
+ * User SignIn reducer.
+ *
+ * @param {object} state initialState object
+ * @param {object} action from redux saga /sagas/userSignin.js
+ * @returns {object} action.user
+ */
+
 const userSignin = (state = { email: "Guest", password: "Guest" }, action) => {
   switch (action.type) {
     case "USER_SIGNIN":

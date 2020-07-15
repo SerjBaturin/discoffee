@@ -1,3 +1,10 @@
+/**
+ * Toggle menu reducer.
+ *
+ * @param {boolean} state initialState false
+ * @param {object} action from connected component
+ * @returns {boolean} true or false
+ */
 const toggleMenu = (state = false, action) => {
   switch (action.type) {
     case "TOGGLE_MENU":

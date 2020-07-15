@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Header, Footer } from "./layouts";
 import Menu from "./Menu";

@@ -4,6 +4,11 @@ import Button from "../../common/Button";
 import { s } from "../../common/Button/buttonStyles";
 import Auth from "../Auth";
 
+/**
+ * Landing is a non auth component for all users.
+ * It's just a landing with simple html & including other components.
+ * @returns {JSX} Landing component
+ */
 const Landing = () => {
   return (
     <div className="landing">

@@ -25,6 +25,13 @@ const menuItemsHandler = (menuItems) =>
     </li>
   ));
 
+/**
+ * Menu component.
+ *
+ * @param {boolean} isMenuOpen from props for switching menu className into css
+ * @param {boolean} isLogged from props for switching menu items list in menuItemsHandler function
+ * @returns {JSX} Menu component
+ */
 const Menu = ({ isMenuOpen, isLogged }) => {
   return (
     <div className={`menu ${isMenuOpen ? "menu_open" : "menu_close"}`}>

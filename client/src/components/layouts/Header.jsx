@@ -7,6 +7,13 @@ import Logo from "./Logo.svg";
 import Button from "../../common/Button";
 import { s } from "../../common/Button/buttonStyles";
 
+/**
+ * Header layout component.
+ *
+ * @param {object} isLogged from props and from store
+ * @param {function} handlerLogin from props dispathing into redux store
+ * @returns {JSX} Header component
+ */
 const Header = ({ isLogged, handlerLogin }) => {
   return (
     <div className="header">

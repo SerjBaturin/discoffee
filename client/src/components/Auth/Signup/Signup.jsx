@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import "./style.scss";
 
+/**
+ * Signup component (like a tab).
+ * Connected with userSignup saga.
+ *
+ * @param {object} userSignup
+ * @returns {JSX}
+ */
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
