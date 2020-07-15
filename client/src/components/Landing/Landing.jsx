@@ -1,11 +1,10 @@
 import React from "react";
-import { connect } from "react-redux";
 import "./style.scss";
 import Button from "../../common/Button";
 import { s } from "../../common/Button/buttonStyles";
 import Auth from "../Auth";
 
-const Landing = ({ sagaCounter, handlerClick }) => {
+const Landing = () => {
   return (
     <div className="landing">
       <section className="landing__utp">
@@ -105,16 +104,4 @@ const Landing = ({ sagaCounter, handlerClick }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    sagaCounter: state.test,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handlerClick: () => dispatch({ type: "TEST" }),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+export default Landing;

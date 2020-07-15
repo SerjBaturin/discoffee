@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import API from "../../../API";
+import { connect } from "react-redux";
 import "./style.scss";
 
-const Signin = () => {
+const Signin = ({ userSignin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handlerOnSubmit = (e) => {
     e.preventDefault();
-    API.signup
-      .post("/users/signin", { email, password })
-      .then((d) => d)
-      .catch((err) => err);
+    userSignin({ email, password });
     setEmail("");
     setPassword("");
   };
@@ -38,5 +35,12 @@ const Signin = () => {
     </div>
   );
 };
+// user1@email.com
+// 123user1
+const mapDispatchToProps = (dispatch) => {
+  return {
+    userSignin: (user) => dispatch({ type: "USER_SIGNIN_ASYNC", user }),
+  };
+};
 
-export default Signin;
+export default connect(null, mapDispatchToProps)(Signin);

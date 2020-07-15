@@ -12,6 +12,14 @@ const controls = () => (
   </div>
 );
 
+/**
+ * Users table component.
+ * Management of App clients (entrepreneurs, baristas. etc...).
+ *
+ * @param {array} users list from props
+ * @param {boolean} isLoading from props
+ * @returns {JSX} table of users component with preloader
+ */
 const Users = ({ users, isLoading }) => {
   return (
     <div className="users">

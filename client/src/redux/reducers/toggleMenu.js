@@ -1,6 +1,6 @@
 const toggleMenu = (state = false, action) => {
   switch (action.type) {
-    case "MENU_TOGGLE":
+    case "TOGGLE_MENU":
       state === false ? (state = true) : (state = false);
     default:
       return state;

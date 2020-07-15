@@ -1,6 +1,8 @@
 .auth__tabs {
   display: inline-block;
   padding: 0.5em 0.5em;
+  box-sizing: border-box;
+  width: 50%;
   color: #fff;
   background-color: #1976d2;
   cursor: pointer;

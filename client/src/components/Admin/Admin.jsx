@@ -3,6 +3,13 @@ import { connect } from "react-redux";
 import Users from "./Users";
 import "./style.scss";
 
+/**
+ * Admin wrapper component.
+ *
+ * @param {array} users array from props
+ * @param {function} getUsers method from props dispatching action into saga
+ * @returns {JSX} admin wrapper component
+ */
 const Admin = ({ users, getUsers }) => {
   useEffect(() => {
     getUsers();

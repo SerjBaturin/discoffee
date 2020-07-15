@@ -1,3 +1,7 @@
+/**
+ * Object with button styles.
+ * In common components folder.
+ */
 export const s = {
   default: {
     padding: ".7em",

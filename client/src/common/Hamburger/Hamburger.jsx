@@ -1,8 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./style.scss";
-import menuToggle from "../../redux/actions/menuToggle";
 
+/**
+ * Hamburger icon component.
+ * If true or false - we change Hamburger icon className.
+ *
+ * @param {function} toggleMenu method from props
+ * @param {boolean} isMenuOpen className swither
+ * @returns {JSX} hamburger icon component
+ */
 const Hamburger = ({ toggleMenu, isMenuOpen }) => {
   return (
     <div
@@ -26,7 +33,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleMenu: () => dispatch(menuToggle()),
+    toggleMenu: () => dispatch({ type: "TOGGLE_MENU" }),
   };
 };
 
