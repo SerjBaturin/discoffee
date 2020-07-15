@@ -33,10 +33,11 @@ app.use(
 // Axios requests readable middleware
 app.use(bodyParser.json());
 
-app.get("/api/users/:user", (req, res) => {
-  User.findOne({ email: req.params.user }).then((user) =>
-    console.log(user),
-  );
+app.get("/api/users/:email&:password", (req, res) => {
+  User.findOne({
+    email: req.params.email,
+    password: req.params.password,
+  }).then((user) => res.send(user));
 });
 
 app.get("/api/users", (req, res) => {

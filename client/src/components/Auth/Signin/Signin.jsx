@@ -44,8 +44,7 @@ const Signin = ({ userSignin }) => {
     </div>
   );
 };
-// user1@email.com
-// 123user1
+
 const mapDispatchToProps = (dispatch) => {
   return {
     userSignin: (user) => dispatch(userSigninAction(user)),

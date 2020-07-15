@@ -1,4 +1,4 @@
-export const userSigninAction = () => ({
+export const userSigninAction = (payload) => ({
   type: "USER_SIGNIN_ASYNC",
-  user,
+  payload,
 });

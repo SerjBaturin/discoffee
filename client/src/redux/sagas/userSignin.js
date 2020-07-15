@@ -6,11 +6,16 @@ export function* userSignin() {
   yield takeEvery("USER_SIGNIN_ASYNC", getUser);
 }
 
-// Make request on server to get signin information
-const checkUser = async (user) =>
-  await API.addUser.post("/users/signin", { user });
-
-// Send action into signin reducer
-function* getUser() {
-  yield put({ type: "USER_SIGNIN", user: yield call(checkUser) });
+// Saga Worker
+// CALL method needs to arguments
+function* getUser(action) {
+  try {
+    const user = yield call(
+      API.getUser.get,
+      `/users/${action.payload.email}&${action.payload.password}`,
+    );
+    yield put({ type: "USER_SIGNIN_SUCCESS", user: user.data });
+  } catch (err) {
+    yield put({ type: "USER_SIGNIN_ERROR" });
+  }
 }
