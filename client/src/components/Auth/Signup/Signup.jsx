@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import "./style.scss";
 
 /**
@@ -8,13 +9,14 @@ import "./style.scss";
  * @param {object} userSignup
  * @returns {JSX}
  */
-const Signup = () => {
+const Signup = ({ user, userSignup }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handlerOnSubmit = (e) => {
     e.preventDefault();
+    userSignup({ name, email, password });
     setName("");
     setEmail("");
     setPassword("");
@@ -44,17 +46,23 @@ const Signup = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <input
+        {/* <input
           type="text"
           placeholder="Подтвердите пароль"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-        />
+        /> */}
         <input type="submit" value="Отправить" />
       </form>
     </div>
   );
 };
 
-export default Signup;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    userSignup: (user) => dispatch({ type: "USER_SIGNUP_ASYNC", user }),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Signup);

@@ -6,7 +6,7 @@
  * @returns {object} action.user
  */
 
-const userSignin = (state = { email: "Гость", password: "---" }, action) => {
+const userSignin = (state = { name: "друг" }, action) => {
   switch (action.type) {
     case "USER_SIGNIN_SUCCESS":
       return action.user;

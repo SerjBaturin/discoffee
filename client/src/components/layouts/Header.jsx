@@ -15,14 +15,15 @@ import "./header.scss";
  * @param {function} handlerLogin from props dispathing into redux store
  * @returns {JSX} Header component
  */
-const Header = ({ isLogged, handlerLogin }) => {
+const Header = ({ user, isLogged, handlerLogin }) => {
   return (
     <div className="header">
       <div className="header__logo">
         <img className="header__logo__img" src={Logo} alt="logo" />
       </div>
-      <div className="header__name">DisCoffee</div>
+      <div className="header__title">DisCoffee</div>
       <Button name={isLogged.name} handler={handlerLogin} styles={s.primary} />
+      <h3 className="header__greeting">Привет, {user.name}!</h3>
       <ToggleLanguage />
       <Hamburger />
     </div>
@@ -32,6 +33,7 @@ const Header = ({ isLogged, handlerLogin }) => {
 const mapStateToProps = (state) => {
   return {
     isLogged: state.isLogged,
+    user: state.userSignin,
   };
 };
 

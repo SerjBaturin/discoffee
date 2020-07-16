@@ -46,7 +46,10 @@ app.get("/api/users", (req, res) => {
 
 app.post("/api/users/add", (req, res) => {
   const user = new User(req.body);
-  user.save();
+  user
+    .save()
+    .then((user) => res.send(user))
+    .catch((err) => res.send(err));
 });
 
 app.listen(PORT, () => {

@@ -20,7 +20,13 @@
   width: 25px;
 }
 
-.header__name {
+.header__title {
   font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header__greeting {
+  margin-left: 1.5em;
+  font-size: 1rem;
   font-weight: 700;
 }
