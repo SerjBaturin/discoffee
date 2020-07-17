@@ -33,24 +33,9 @@ app.use(
 // Axios requests readable middleware
 app.use(bodyParser.json());
 
-app.get("/api/users/:email&:password", (req, res) => {
-  User.findOne({
-    email: req.params.email,
-    password: req.params.password,
-  }).then((user) => res.send(user));
-});
-
-app.get("/api/users", (req, res) => {
-  User.find().then((d) => res.send(d));
-});
-
-app.post("/api/users/add", (req, res) => {
-  const user = new User(req.body);
-  user
-    .save()
-    .then((user) => res.send(user))
-    .catch((err) => res.send(err));
-});
+// Routing
+app.use("/api/admin", require("./routes/Admin"));
+app.use("/api", require("./routes/User"));
 
 app.listen(PORT, () => {
   console.log("OK ===> ", PORT, process.pid);
