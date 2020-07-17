@@ -12,7 +12,7 @@ function* getUser(action) {
   try {
     const user = yield call(
       API.getUser.get,
-      `/users/${action.payload.email}&${action.payload.password}`,
+      `/admin/users/${action.payload.email}&${action.payload.password}`,
     );
     yield put({ type: "USER_SIGNIN_SUCCESS", user: user.data });
   } catch (err) {

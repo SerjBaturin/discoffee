@@ -15,7 +15,7 @@ const Menu = ({ isMenuOpen, toggleMenu }) => {
     <div className={`menu ${isMenuOpen ? "menu_open" : "menu_close"}`}>
       <ul className="menu__list">
         <li className="menu__list__item">
-          <Link to="/">Главнsая</Link>
+          <Link to="/">Главная</Link>
         </li>
         <li className="menu__list__item">
           <Link to="/admin">Админ-панель</Link>

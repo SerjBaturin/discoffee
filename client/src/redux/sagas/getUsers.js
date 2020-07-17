@@ -7,7 +7,7 @@ export function* getUsers() {
 }
 
 // Make request on server to get signin information
-const fetchUsers = async () => (await API.getUsers.get("/users")).data;
+const fetchUsers = async () => (await API.getUsers.get("/admin/users")).data;
 
 // Send action into getting users reducer with users payload
 function* getAllUsers() {
