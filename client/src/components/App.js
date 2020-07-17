@@ -1,18 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Header, Footer } from "./layouts";
 import Menu from "./Menu";
 import Admin from "./Admin";
 import Landing from "./Landing";
 import "./style.scss";
 
-const App = ({ isLogged }) => (
-  <div className="app">
-    <Header />
-    <Menu />
-    {isLogged ? <Admin /> : <Landing />}
-    <Footer />
-  </div>
+const App = () => (
+  <BrowserRouter>
+    <div className="app">
+      <Header />
+      <Menu />
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/admin" component={Admin} />
+      </Switch>
+      <Footer />
+    </div>
+  </BrowserRouter>
 );
 
 const mapStateToProps = (state) => {

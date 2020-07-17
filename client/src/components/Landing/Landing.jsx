@@ -91,6 +91,11 @@ const Landing = () => {
       <section className="landing__how">
         <div className="container">
           <h2 className="landing__section__title">Как это работает</h2>
+          <ul className="landing__how__list">
+            <li className="landing__how__list__item">Вот так</li>
+            <li className="landing__how__list__item">А потом вот так</li>
+            <li className="landing__how__list__item">И щё вот так в конце</li>
+          </ul>
         </div>
       </section>
 
