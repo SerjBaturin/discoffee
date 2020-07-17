@@ -11,13 +11,14 @@ import { userSigninAction } from "../../../redux/actions/userSigninAction";
  * @param {object} userSignin
  * @returns {JSX}
  */
-const Signin = ({ userSignin }) => {
+const Signin = ({ userSignin, adminPageShow }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handlerOnSubmit = (e) => {
     e.preventDefault();
     userSignin({ email, password });
+    adminPageShow();
     setEmail("");
     setPassword("");
   };
@@ -48,6 +49,7 @@ const Signin = ({ userSignin }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     userSignin: (user) => dispatch(userSigninAction(user)),
+    adminPageShow: () => dispatch({ type: "IS_LOGGED" }),
   };
 };
 
