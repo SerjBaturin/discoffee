@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./style.scss";
 
 /**
@@ -10,16 +10,16 @@ import "./style.scss";
  * @param {boolean} isLogged from props for switching menu items list in menuItemsHandler function
  * @returns {JSX} Menu component
  */
-const Menu = ({ isMenuOpen }) => {
+const Menu = ({ isMenuOpen, toggleMenu }) => {
   return (
     <div className={`menu ${isMenuOpen ? "menu_open" : "menu_close"}`}>
       <ul className="menu__list">
-        <Link to="/" className="menu__list__item">
-          Главная
-        </Link>
-        <Link to="/admin" className="menu__list__item">
-          Админ-панель
-        </Link>
+        <li className="menu__list__item">
+          <Link to="/">Главнsая</Link>
+        </li>
+        <li className="menu__list__item">
+          <Link to="/admin">Админ-панель</Link>
+        </li>
       </ul>
     </div>
   );
@@ -31,4 +31,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Menu);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleMenu: () => dispatch({ type: "TOGGLE_MENU" }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
