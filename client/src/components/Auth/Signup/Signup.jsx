@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { userSignupAsync } from "../../../redux/actions/User/userSignupAsync";
 import "./style.scss";
 
 /**
@@ -9,7 +10,7 @@ import "./style.scss";
  * @param {object} userSignup
  * @returns {JSX}
  */
-const Signup = ({ user, userSignup }) => {
+const Signup = ({ userSignup }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -61,7 +62,7 @@ const Signup = ({ user, userSignup }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    userSignup: (user) => dispatch({ type: "USER_SIGNUP_ASYNC", user }),
+    userSignup: (user) => dispatch(userSignupAsync(user)),
   };
 };
 

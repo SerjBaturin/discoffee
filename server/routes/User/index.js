@@ -7,6 +7,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+// userSignin - /sagas/ on the CLIENT
 router.get("/user/:email&:password", (req, res) => {
   User.findOne({
     email: req.params.email,

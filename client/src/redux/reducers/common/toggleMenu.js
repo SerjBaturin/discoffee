@@ -1,3 +1,4 @@
+import { TOGGLE_MENU } from "../../actions/common/types";
 /**
  * Toggle menu reducer.
  *
@@ -7,7 +8,7 @@
  */
 const toggleMenu = (state = false, action) => {
   switch (action.type) {
-    case "TOGGLE_MENU":
+    case TOGGLE_MENU:
       state === false ? (state = true) : (state = false);
     default:
       return state;

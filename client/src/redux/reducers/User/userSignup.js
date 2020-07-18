@@ -1,3 +1,8 @@
+import {
+  USER_SIGNUP_SUCCESS,
+  USER_SIGNUP_ERROR,
+} from "../../actions/User/types";
+
 /**
  * User SignUp reducer.
  *
@@ -5,13 +10,12 @@
  * @param {object} action from redux saga /sagas/userSignin.js
  * @returns {object} action.user
  */
-
 const userSignup = (state = {}, action) => {
   switch (action.type) {
-    case "USER_SIGNUP_SUCCESS":
+    case USER_SIGNUP_SUCCESS:
       console.log("USER REGISTERED");
-      return  action.user;
-    case "USER_SIGNUP_ERROR":
+      return action.user;
+    case USER_SIGNUP_ERROR:
       console.log("User did not register");
     default:
       return state;

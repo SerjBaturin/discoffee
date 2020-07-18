@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { getUsersAsync } from "../../redux/actions/Admin/getUsersAsync";
 import Users from "./Users";
 import "./style.scss";
 
@@ -33,7 +34,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    getUsers: () => dispatch({ type: "GET_USERS_ASYNC" }),
+    getUsers: () => dispatch(getUsersAsync()),
   };
 };
 

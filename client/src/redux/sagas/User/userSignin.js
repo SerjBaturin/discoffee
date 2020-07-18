@@ -1,9 +1,12 @@
 import { takeEvery, put, call } from "redux-saga/effects";
 import API from "../../../API/User";
+import { USER_SIGNIN_ASYNC } from "../../actions/User/types";
+import { userSigninSuccess } from "../../actions/User/userSigninSuccess";
+import { userSigninError } from "../../actions/User/userSigninError";
 
 // Get action from connected component
 export function* userSignin() {
-  yield takeEvery("USER_SIGNIN_ASYNC", getUser);
+  yield takeEvery(USER_SIGNIN_ASYNC, getUser);
 }
 
 // Saga Worker
@@ -14,8 +17,8 @@ function* getUser(action) {
       API.getUser.get,
       `/${action.payload.email}&${action.payload.password}`,
     );
-    yield put({ type: "USER_SIGNIN_SUCCESS", user: user.data });
+    yield put(userSigninSuccess(user.data));
   } catch (err) {
-    yield put({ type: "USER_SIGNIN_ERROR" });
+    yield put(userSigninError());
   }
 }

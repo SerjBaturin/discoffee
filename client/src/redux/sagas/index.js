@@ -2,7 +2,7 @@ import { all, fork } from "redux-saga/effects";
 import { getUsers } from "./Admin/getUsers";
 import { userSignin } from "./User/userSignin";
 import { userSignup } from "./User/userSignup";
-import { getUser } from "./User/getUser";
+import { checkUser } from "./User/checkUser";
 
 /**
  * Multiple sagas Root generator.
@@ -14,6 +14,6 @@ export default function* rootSaga() {
     fork(getUsers),
     fork(userSignin),
     fork(userSignup),
-    fork(getUser),
+    fork(checkUser),
   ]);
 }

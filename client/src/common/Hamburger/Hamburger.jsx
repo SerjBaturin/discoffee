@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { toggleMenu } from "../../redux/actions/common/toggleMenu";
 import "./style.scss";
 
 /**
@@ -33,7 +34,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleMenu: () => dispatch({ type: "TOGGLE_MENU" }),
+    toggleMenu: () => dispatch(toggleMenu()),
   };
 };
 

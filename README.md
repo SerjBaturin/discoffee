@@ -1,6 +1,7 @@
 # discoffee
 
 MVP of discount service for coffee makers
+Start - June, 28, 2020
 
 ## Techs
 
