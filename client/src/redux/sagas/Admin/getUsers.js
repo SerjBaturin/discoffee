@@ -1,5 +1,5 @@
 import { takeEvery, put, call } from "redux-saga/effects";
-import API from "../../API";
+import API from "../../../API/Admin";
 
 // Get action from connected component
 export function* getUsers() {
@@ -7,7 +7,7 @@ export function* getUsers() {
 }
 
 // Make request on server to get signin information
-const fetchUsers = async () => (await API.getUsers.get("/admin/users")).data;
+const fetchUsers = async () => (await API.getUsers.get("/users")).data;
 
 // Send action into getting users reducer with users payload
 function* getAllUsers() {

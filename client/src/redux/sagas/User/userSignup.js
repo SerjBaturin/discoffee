@@ -1,5 +1,5 @@
 import { takeEvery, put, call } from "redux-saga/effects";
-import API from "../../API";
+import API from "../../../API/User";
 
 // Get action from connected component
 export function* userSignup() {
@@ -10,7 +10,7 @@ export function* userSignup() {
 // CALL method needs to arguments
 function* addUser(action) {
   try {
-    const user = yield call(API.addUser.post, "/admin/users/add", action.user);
+    const user = yield call(API.addUser.post, "/add", action.user);
     yield put({ type: "USER_SIGNUP_SUCCESS", user: user.data });
   } catch (err) {
     yield put({ type: "USER_SIGNUP_ERROR" });

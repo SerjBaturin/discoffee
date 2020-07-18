@@ -1,20 +1,20 @@
 /**
- * User SignIn reducer.
+ * GET User reducer.
  *
  * @param {object} state initialState object
  * @param {object} action from redux saga /sagas/userSignin.js
  * @returns {object} action.user
  */
 
-const userSignin = (state = { name: "друг" }, action) => {
+const getUser = (state = { name: "гость" }, action) => {
   switch (action.type) {
-    case "USER_SIGNIN_SUCCESS":
+    case "GET_USER_SUCCESS":
       return action.user;
-    case "USER_SIGNIN_ERROR":
-      console.log("User not found");
+    case "GET_USER_FAIL":
+      return state;
     default:
       return state;
   }
 };
 
-export default userSignin;
+export default getUser;

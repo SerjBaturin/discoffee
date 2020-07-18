@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./style.scss";
 
-import { userSigninAction } from "../../../redux/actions/userSigninAction";
+import { userSigninAsync } from "../../../redux/actions/User/userSigninAsync";
 
 /**
  * Signin component (like a tab).
@@ -11,14 +11,13 @@ import { userSigninAction } from "../../../redux/actions/userSigninAction";
  * @param {object} userSignin
  * @returns {JSX}
  */
-const Signin = ({ userSignin, adminPageShow }) => {
+const Signin = ({ userSignin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handlerOnSubmit = (e) => {
     e.preventDefault();
     userSignin({ email, password });
-    adminPageShow();
     setEmail("");
     setPassword("");
   };
@@ -48,8 +47,9 @@ const Signin = ({ userSignin, adminPageShow }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    userSignin: (user) => dispatch(userSigninAction(user)),
-    adminPageShow: () => dispatch({ type: "IS_LOGGED" }),
+    userSignin: (user) => {
+      dispatch(userSigninAsync(user));
+    },
   };
 };
 

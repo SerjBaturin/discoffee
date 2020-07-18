@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
-import toggleMenu from "./toggleMenu";
+import toggleMenu from "./common/toggleMenu";
 import isLogged from "./isLogged";
-import getUsers from "./getUsers";
-import userSignin from "./userSignin";
-import userSignup from "./userSignup";
+import getUsers from "./Admin/getUsers";
+import userSignin from "./User/userSignin";
+import userSignup from "./User/userSignup";
+import getUser from "./User/getUser";
 
 /**
  * Entry point (Root Reducer) for others.
@@ -14,4 +15,5 @@ export default combineReducers({
   getUsers,
   userSignin,
   userSignup,
+  getUser,
 });

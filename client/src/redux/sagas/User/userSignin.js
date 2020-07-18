@@ -1,5 +1,5 @@
 import { takeEvery, put, call } from "redux-saga/effects";
-import API from "../../API";
+import API from "../../../API/User";
 
 // Get action from connected component
 export function* userSignin() {
@@ -12,7 +12,7 @@ function* getUser(action) {
   try {
     const user = yield call(
       API.getUser.get,
-      `/admin/users/${action.payload.email}&${action.payload.password}`,
+      `/${action.payload.email}&${action.payload.password}`,
     );
     yield put({ type: "USER_SIGNIN_SUCCESS", user: user.data });
   } catch (err) {
